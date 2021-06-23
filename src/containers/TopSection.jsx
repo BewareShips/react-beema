@@ -6,6 +6,7 @@ import { Marginer } from "../components/marginer";
 import Button from "../components/button/Button.jsx";
 import DownArrow from "../components/downArrow/DownArrow";
 import Navbar from "../components/navbar/Navbar";
+import { Element, scroller } from "react-scroll";
 
 const TopContainer = styled.div`
    width: 100%;
@@ -41,22 +42,27 @@ const DownArrowContainer = styled.div`
 `;
 
 const TopSection = () => {
+   const scrollToNextSection = () => {
+      scroller.scrollTo("services", { smooth: true, duration: 1500 });
+   };
    return (
-      <TopContainer>
-         <BackgroundFilter>
-            <Navbar />
-            <Marginer direction="vertical" margin="8em" />
-            <Logo />
-            <Marginer direction="vertical" margin="4em" />
-            <MotivationalText>Software Development</MotivationalText>
-            <MotivationalText>From the best in industry</MotivationalText>
-            <Marginer direction="vertical" margin="2em" />
-            <Button>Start your project</Button>
-            <DownArrowContainer>
-               <DownArrow />
-            </DownArrowContainer>
-         </BackgroundFilter>
-      </TopContainer>
+      <Element name="topSection">
+         <TopContainer>
+            <BackgroundFilter>
+               <Navbar />
+               <Marginer direction="vertical" margin="8em" />
+               <Logo />
+               <Marginer direction="vertical" margin="4em" />
+               <MotivationalText>Software Development</MotivationalText>
+               <MotivationalText>From the best in industry</MotivationalText>
+               <Marginer direction="vertical" margin="2em" />
+               <Button>Start your project</Button>
+               <DownArrowContainer onClick={scrollToNextSection}>
+                  <DownArrow />
+               </DownArrowContainer>
+            </BackgroundFilter>
+         </TopContainer>
+      </Element>
    );
 };
 
