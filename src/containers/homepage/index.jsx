@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import { Marginer } from "../../components/marginer";
+import ReviewSection from "../ReviewSection";
 import ServicesSection from "../ServicesSection";
 import TopSection from "../TopSection";
 
@@ -15,6 +17,8 @@ const HomePage = () => {
       <PageContainer>
          <TopSection />
          <ServicesSection />
+         <Marginer direction="vertical" margin="2em" />
+         <ReviewSection/>
       </PageContainer>
    );
 };

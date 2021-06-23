@@ -4,14 +4,13 @@ import styled from "styled-components";
 import { Marginer } from "../components/marginer";
 import OurService from "../components/ourService/OurService";
 import { SectionTitle } from "../components/sectionTitle/SectionTitle";
+import data from '../assets/data/data.js'
 
-import Service1Img from "../assets/illustrations/web_development_.png";
-import Service2Img from "../assets/illustrations/mobile_phone.png";
-import Service3Img from "../assets/illustrations/bug_fixed.png";
+
 
 const ServicesContainer = styled(Element)`
    width: 100%;
-   min-height: 1400px;
+   min-height: 1100px;
    display: flex;
    flex-direction: column;
    align-items: center;
@@ -23,28 +22,15 @@ const ServicesSection = () => {
       <ServicesContainer name="services">
          <SectionTitle>Best Quality Software</SectionTitle>
          <Marginer direction="vertical" margin="3em" />
-         <OurService
-            title="Fully integrated services"
-            description="We build and deliver fully integrated webapps
-                         with customized control panels that fit your 
-                         compnay needs"
-            imgUrl={Service1Img}
-         />
-         <OurService
-            title="Mobile optimized"
-            description="We build and deliver fully integrated webapps
-                         with customized control panels that fit your 
-                         compnay needs"
-            imgUrl={Service2Img}
-            isReversed
-         />
-          <OurService
-            title="Quality is our priority"
-            description="We have teams of professional developers, designers
-            and managers that ensures delivering the best 
-            software quality for your company"
-            imgUrl={Service3Img}
-         />
+         {data.map(({ title, description, imgUrl, isReversed, id }) => (
+            <OurService
+               title={title}
+               description={description}
+               imgUrl={imgUrl}
+               isReversed={isReversed}
+               key={id}
+            />
+         ))}
       </ServicesContainer>
    );
 };
