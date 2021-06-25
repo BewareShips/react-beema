@@ -4,13 +4,22 @@ import styled from "styled-components";
 const ServiceContainer = styled.div`
    display: flex;
    align-items: center;
+   
    flex-direction:${({isReversed})=> isReversed && "row-reverse"} ;
    margin-bottom: 4em;
+   flex-wrap: wrap-reverse;
+   @media screen and (max-width: 480px){
+      justify-content: center;
+   }
 `;
 
 const ServiceImg = styled.img`
    width: 22em;
    height: 16em;
+   @media screen and (max-width: 480px){
+      width: 15em;
+      height: 12em;
+   }
 `;
 
 const DescriptionContainer = styled.div`
@@ -18,6 +27,9 @@ const DescriptionContainer = styled.div`
    flex-direction: column;
    align-items: center;
    max-width: 60%;
+   @media screen and (max-width: 480px){
+      max-width:100%;
+   }
 `;
 
 const Title = styled.h2`
@@ -25,6 +37,10 @@ const Title = styled.h2`
    font-size: 28px;
    font-weight: 700;
    margin: 5px 0;
+   @media screen and (max-width: 480px){
+      margin-top: 1.5em;
+   }
+   
 `;
 
 const Details = styled.p`

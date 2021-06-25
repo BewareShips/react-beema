@@ -21,21 +21,29 @@ const LogoImg = styled.img`
          height: 24px;
          margin-right: 6px;
       `}
+
+   ${({ small }) =>
+      small &&
+      css`
+         width: 5em;
+         height: 5em;
+      `}
 `;
 
 const LogoText = styled.div`
    margin-top: ${({ inline }) => (inline ? 0 : "6px")};
-   font-size: ${({ inline }) => (inline ? "16px" : "40px")};
+   font-size: ${({ inline, small }) =>
+      inline ? "18px" : small ? "22px" : "40px"};
    color: ${({ inline }) => (inline ? "#fff" : theme.primary)};
    font-weight: bold;
 `;
 
 const Logo = (props) => {
-   const { inline } = props;
+   const { inline, small } = props;
    return (
-      <LogoContainer inline={inline}>
+      <LogoContainer inline={inline} small={small}>
          <LogoImg src={BeemaLogo} inline={inline} />
-         <LogoText inline={inline}>Beema</LogoText>
+         <LogoText inline={inline} small={small}>Beema</LogoText>
       </LogoContainer>
    );
 };

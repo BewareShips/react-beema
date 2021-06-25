@@ -32,6 +32,9 @@ const MotivationalText = styled.h1`
    line-height: 1.4;
    color: #fff;
    text-align: center;
+   @media screen and (max-width: 480px){
+     font-size: 23px;
+   }
 `;
 
 const DownArrowContainer = styled.div`
