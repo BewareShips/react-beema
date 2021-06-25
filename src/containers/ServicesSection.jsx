@@ -4,7 +4,8 @@ import styled from "styled-components";
 import { Marginer } from "../components/marginer";
 import OurService from "../components/ourService/OurService";
 import { SectionTitle } from "../components/sectionTitle/SectionTitle";
-import data from '../assets/data/data.js'
+
+import {description} from '../assets/data/data.js'
 
 
 
@@ -22,7 +23,7 @@ const ServicesSection = () => {
       <ServicesContainer name="services">
          <SectionTitle>Best Quality Software</SectionTitle>
          <Marginer direction="vertical" margin="3em" />
-         {data.map(({ title, description, imgUrl, isReversed, id }) => (
+         {description.map(({ title, description, imgUrl, isReversed, id }) => (
             <OurService
                title={title}
                description={description}
